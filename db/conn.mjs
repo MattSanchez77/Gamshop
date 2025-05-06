@@ -9,6 +9,7 @@ const connectionStr = process.env.mongoURI || '';
 async function connectDB (){
     try {
         await mongoose.connect(connectionStr)
+        
         console.log("MongoDB Connected...");
         
     } catch (err) {
