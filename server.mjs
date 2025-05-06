@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
 import globalError from './middleware/globalErr.mjs';
+import connectDB from './db/conn.mjs';
 // Setups
 dotenv.config();
 const app = express();
