@@ -7,6 +7,7 @@ import globalError from './middleware/globalErr.mjs';
 import connectDB from './db/conn.mjs';
 import userRoutes from './routes/userRoutes.mjs'
 // Setups
+connectDB();
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,12 +18,12 @@ app.use(morgan("tiny"));
 app.use(express.json());
 
 // Routes
-app.use()
+app.use('/api/user', userRoutes);
 
-// Error Middleware
-app.use(globalError);
+// Err Middleware - only run when we have a server error
+app.use(globalErr);
 
-// Listener
-app.listen(PORT, ()=>{
-    console.log(`Server running on Port: ${PORT}`);
-})
+// listener
+app.listen(PORT, () => {
+  console.log(`Server running on Port: ${PORT}`);
+});
