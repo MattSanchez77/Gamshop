@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import globalError from './middleware/globalErr.mjs';
 import connectDB from './db/conn.mjs';
+import userRoutes from './routes/userRoutes.mjs'
 // Setups
 dotenv.config();
 const app = express();
@@ -14,7 +15,9 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
+
 // Routes
+app.use()
 
 // Error Middleware
 app.use(globalError);
