@@ -6,6 +6,7 @@ import cors from 'cors';
 import globalError from './middleware/globalErr.mjs';
 import connectDB from './db/conn.mjs';
 import userRoutes from './routes/userRoutes.mjs'
+import globalErr from './middleware/globalErr.mjs';
 // Setups
 connectDB();
 dotenv.config();
